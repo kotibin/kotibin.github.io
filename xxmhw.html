@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+</body>
+<script>
+    const query = window.location.search.slice(1).split("&").reduce((o, c) => {
+        const kv = c.split("=");
+        o[kv[0]] = kv[1];
+        return o;
+    }, {})
+
+    for (let i = Number.parseInt(query.start); i < Number.parseInt(query.end); i++) {
+        for (let j = 0; j < Number.parseInt(query.size); j++) {
+            const imgElement = document.createElement("img")
+            imgElement.src = `http://images.66hm.top/mh/${query.name}/${i}/${j}.jpg`
+            imgElement.setAttribute("width", "100%")
+            imgElement.onerror = () => imgElement.setAttribute("hidden", true);
+            document.body.append(imgElement)
+        }
+    }
+
+    document.title = decodeURI(query.name)
+</script>
+
+</html>
