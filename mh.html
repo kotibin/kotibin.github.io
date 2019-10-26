@@ -10,8 +10,8 @@
 
 <body>
     <div class="input-body">
-        <input type="text" id="name" placeholder="请输入漫画名称">
-        <div class="param-body">
+        <div>
+            <input type="text" id="name" placeholder="请输入漫画名称">
             <input type="number" id="size" placeholder="请输入图片个数">
             <input type="number" id="start" placeholder="请输入起始页码">
             <input type="number" id="end" placeholder="请输入结束页码">
@@ -30,9 +30,9 @@
     .input-body {
         height: 100%;
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
     }
 
     input {
@@ -40,8 +40,11 @@
         padding: 10px 20px;
         border-radius: 4px;
         margin: 8px;
-    }
 
+        font-size: 16px;
+        font-weight: bold;
+        color: #444444;
+    }
     button {
         margin: 8px;
         background-color: #018dee;
@@ -52,8 +55,8 @@
 
         border-radius: 4px;
 
-        font-size: 16px;
-        font-weight: 500;
+        font-size: 15px;
+        font-weight: 400;
         color: rgba(255, 255, 255, 1);
         line-height: 21px;
     }
